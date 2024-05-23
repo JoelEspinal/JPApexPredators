@@ -17,6 +17,10 @@ struct ApexPredator: Decodable, Identifiable {
     let movieScenes: [MovieScene]
     let link: String
     
+    var image: String {
+        name.lowercased().replacingOccurrences(of: " ", with: "")
+    }
+    
     struct MovieScene: Decodable {
         let id: Int
         let movie: String
