@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ApexPredator: Decodable {
+struct ApexPredator: Decodable, Identifiable {
     let id: Int
     let name: String
     let type: String
@@ -20,6 +20,6 @@ struct ApexPredator: Decodable {
     struct MovieScene: Decodable {
         let id: Int
         let movie: String
-        let scene_description: String
+        let sceneDescription: String
     }
 }
