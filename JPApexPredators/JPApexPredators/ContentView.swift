@@ -50,6 +50,7 @@ struct ContentView: View {
             .navigationTitle("Apex Predators")
             .searchable(text: $searchText)
             .autocorrectionDisabled()
+            .animation(.default, value: searchText)
         }
         .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
