@@ -38,7 +38,7 @@ struct ContentView: View {
                                 .fontWeight(.bold)
                             Text(predator.type.rawValue.capitalized)
                                 .font(.subheadline)
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
                                 .padding(.horizontal, 13)
                                 .padding(.vertical, 5)
                                 .background(predator.type.background)
@@ -58,18 +58,18 @@ struct ContentView: View {
                             alphabetical.toggle()
                         }
                     } label: {
-                            Image(systemName: alphabetical ? "film" : "textformat")
+                        Image(systemName: alphabetical ? "film" : "textformat")
                             .symbolEffect(.bounce, value: alphabetical)
-                     
+                        
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
-                        Picker("Filter", selection: $currentSelection) {
+                        Picker("Filter", selection: $currentSelection.animation()) {
                             ForEach(PredatorType.allCases) { type in
                                 Label(type.rawValue
                                     .capitalized,
-                                    systemImage: type.icon)
+                                      systemImage: type.icon)
                             }
                         }
                     } label: {
@@ -78,7 +78,7 @@ struct ContentView: View {
                 }
             }
         }
-        .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+        .preferredColorScheme(.dark)
     }
 }
 
