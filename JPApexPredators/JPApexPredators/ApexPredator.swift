@@ -30,6 +30,7 @@ struct ApexPredator: Decodable, Identifiable {
 }
 
 enum PredatorType: String, Decodable {
+    case all
     case land
     case air
     case sea
@@ -42,6 +43,21 @@ enum PredatorType: String, Decodable {
                 .teal
         case .sea:
                 .blue
+        case .all:
+                .black
+        }
+    }
+    
+    var icon: String {
+        switch self {
+        case .all:
+            "square.stack.3d.up.fill"
+        case .land:
+                "leaf.fill"
+        case .air:
+                "wind"
+        case .sea:
+                "drop.fill"
         }
     }
 }
