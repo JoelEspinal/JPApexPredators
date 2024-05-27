@@ -29,7 +29,12 @@ struct ApexPredator: Decodable, Identifiable {
     }
 }
 
-enum PredatorType: String, Decodable {
+enum PredatorType: String, Decodable, CaseIterable, Identifiable {
+    
+    var id: PredatorType{
+        self
+    }
+    
     case all
     case land
     case air
