@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State var searchText = ""
+    @State var alphabetical = false
+
     let predators = Predators()
     
-    @State var searchText = ""
-    
     var filteredDinos: [ApexPredator] {
+        predators.sort(by: alphabetical)
         return predators.search(for: searchText)
     }
     
@@ -22,30 +25,43 @@ struct ContentView: View {
                 NavigationLink {
                     Image(predator.image)
                 } label: {
-                HStack {
-                    Image(predator.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100.0, height: 100.0)
-                        .shadow(color: .white, radius: 1)
-                    VStack(alignment: .leading) {
-                        Text(predator.name)
-                            .fontWeight(.bold)
-                        Text(predator.type.rawValue.capitalized)
-                            .font(.subheadline)
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                            .padding(.horizontal, 13)
-                            .padding(.vertical, 5)
-                            .background(predator.type.background)
-                            .clipShape(.capsule)
+                    HStack {
+                        Image(predator.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100.0, height: 100.0)
+                            .shadow(color: .white, radius: 1)
+                        VStack(alignment: .leading) {
+                            Text(predator.name)
+                                .fontWeight(.bold)
+                            Text(predator.type.rawValue.capitalized)
+                                .font(.subheadline)
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .padding(.horizontal, 13)
+                                .padding(.vertical, 5)
+                                .background(predator.type.background)
+                                .clipShape(.capsule)
+                        }
                     }
                 }
-            }
             }
             .navigationTitle("Apex Predators")
             .searchable(text: $searchText)
             .autocorrectionDisabled()
             .animation(.default, value: searchText)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        alphabetical.toggle()
+                    } label: {
+                        if alphabetical {
+                            Image(systemName: "film")
+                        } else {
+                            Image(systemName: "textformat")
+                        }
+                    }
+                }
+            }
         }
         .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
