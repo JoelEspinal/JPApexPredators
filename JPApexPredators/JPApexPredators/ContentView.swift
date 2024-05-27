@@ -16,6 +16,7 @@ struct ContentView: View {
     let predators = Predators()
     
     var filteredDinos: [ApexPredator] {
+        predators.filter(by: currentSelection)
         predators.sort(by: alphabetical)
         return predators.search(for: searchText)
     }
