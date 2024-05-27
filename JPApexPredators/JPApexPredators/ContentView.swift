@@ -61,6 +61,13 @@ struct ContentView: View {
                      
                     }
                 }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        
+                    } label: {
+                        Image(systemName: "slider.horizontal.3")
+                    }
+                }
             }
         }
         .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
