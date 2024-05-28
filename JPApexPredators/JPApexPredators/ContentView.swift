@@ -25,7 +25,7 @@ struct ContentView: View {
         NavigationStack {
             List(filteredDinos) { predator in
                 NavigationLink {
-                    Image(predator.image)
+                   PredatorDetail()
                 } label: {
                     HStack {
                         Image(predator.image)
