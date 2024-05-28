@@ -12,22 +12,32 @@ struct PredatorDetail: View {
     let predator: ApexPredator
     
     var body: some View {
-        ScrollView {
-            ZStack {
-                // background image
+        GeometryReader { geo in
+            ScrollView {
+                ZStack {
+                    // background image
+                    Image(predator.type.rawValue)
+                        .resizable()
+                        .scaledToFit()
+                    
+                    // Dino image
+                    Image(predator.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: geo.size.width / 1.5, height: geo.size.height / 3)
+                }
                 
-                // Dino image
+                // Dino name
+                
+                // current location
+                
+                // Appears in
+                
+                // movie moment
+                
+                // Link to webpagee
             }
-            
-            // Dino name
-            
-            // current location
-            
-            // Appears in
-            
-            // movie moment
-            
-            // Link to webpagee
+            .ignoresSafeArea()
         }
     }
 }
