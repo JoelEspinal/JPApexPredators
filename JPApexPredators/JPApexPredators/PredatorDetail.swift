@@ -31,7 +31,13 @@ struct PredatorDetail: View {
                 }
                 
                 // Dino name
+                VStack(alignment: .leading) {
+                    Text(predator.name)
+                }
+                .frame(width: geo.size.width, alignment: .leading)
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
                 
+               
                 // current location
                 
                 // Appears in
