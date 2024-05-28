@@ -25,6 +25,7 @@ struct PredatorDetail: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: geo.size.width / 1.5, height: geo.size.height / 3)
+                        .scaleEffect(x: -1)
                 }
                 
                 // Dino name
