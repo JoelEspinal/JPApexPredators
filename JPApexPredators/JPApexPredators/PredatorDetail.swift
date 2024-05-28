@@ -14,7 +14,7 @@ struct PredatorDetail: View {
     var body: some View {
         GeometryReader { geo in
             ScrollView {
-                ZStack {
+                ZStack(alignment: .bottomTrailing) {
                     // background image
                     Image(predator.type.rawValue)
                         .resizable()
@@ -26,6 +26,8 @@ struct PredatorDetail: View {
                         .scaledToFit()
                         .frame(width: geo.size.width / 1.5, height: geo.size.height / 3)
                         .scaleEffect(x: -1)
+                        .shadow(color: .black, radius: 7)
+                        .offset(y: 20)
                 }
                 
                 // Dino name
