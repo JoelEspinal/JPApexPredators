@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct PredatorDetail: View {
+    
+    let predator: ApexPredator
+    
     var body: some View {
         ScrollView {
             ZStack {
@@ -30,6 +33,7 @@ struct PredatorDetail: View {
 }
 
 #Preview {
-    PredatorDetail()
+    PredatorDetail(predator: Predators().apexPredators[0])
         .preferredColorScheme(.light)
 }
+ 
