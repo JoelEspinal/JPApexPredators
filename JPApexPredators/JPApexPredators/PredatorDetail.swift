@@ -63,6 +63,7 @@ struct PredatorDetail: View {
                     
                 }
                 .padding()
+                .padding(.bottom)
                 .frame(width: geo.size.width, alignment: .leading)
                 
                 // current location
