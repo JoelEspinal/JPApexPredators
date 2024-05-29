@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct PredatorDetail: View {
     
     let predator: ApexPredator
+    @State var position: MapCameraPosition
     
     var body: some View {
         GeometryReader { geo in
@@ -34,6 +36,7 @@ struct PredatorDetail: View {
                 VStack(alignment: .leading) {
                     Text(predator.name)
                         .font(.largeTitle)
+                    Map(position: <#T##Binding<MapCameraPosition>#>)
                     Text("Appear in: ")
                         .font(.title3)
                     
@@ -60,13 +63,11 @@ struct PredatorDetail: View {
                     Text("Read More:")
                         .font(.caption)
                     Link(predator.link, destination: URL(string: predator.link)!)
-                    
                 }
                 .padding()
                 .padding(.bottom)
                 .frame(width: geo.size.width, alignment: .leading)
                 
-                // current location
                 
                 // Appears in
                 
@@ -77,7 +78,8 @@ struct PredatorDetail: View {
 }
 
 #Preview {
-    PredatorDetail(predator: Predators().apexPredators[10])
-        .preferredColorScheme(.dark)
+    PredatorDetail(predator: Predators().apexPredators[2],
+                   position: .camera(MapCamera(centerCoordinate: Predators().apexPredators[2].location, distance: 30000)))
+    .preferredColorScheme(.dark)
 }
  
