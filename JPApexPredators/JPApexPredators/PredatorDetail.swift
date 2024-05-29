@@ -78,6 +78,6 @@ struct PredatorDetail: View {
 
 #Preview {
     PredatorDetail(predator: Predators().apexPredators[10])
-        .preferredColorScheme(.light)
+        .preferredColorScheme(.dark)
 }
  
