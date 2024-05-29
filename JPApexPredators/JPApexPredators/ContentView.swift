@@ -33,6 +33,12 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(width: 100.0, height: 100.0)
                             .shadow(color: .white, radius: 1)
+                            .overlay {
+                                LinearGradient(stops: [
+                                    Gradient.Stop(color: .clear, location: 0.8),
+                                    Gradient.Stop(color: .black, location: 1)
+                                ], startPoint: .top, endPoint: .bottom)
+                            }
                         VStack(alignment: .leading) {
                             Text(predator.name)
                                 .fontWeight(.bold)
