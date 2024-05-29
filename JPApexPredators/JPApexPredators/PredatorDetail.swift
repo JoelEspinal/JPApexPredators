@@ -77,7 +77,7 @@ struct PredatorDetail: View {
 }
 
 #Preview {
-    PredatorDetail(predator: Predators().apexPredators[0])
+    PredatorDetail(predator: Predators().apexPredators[10])
         .preferredColorScheme(.light)
 }
  
