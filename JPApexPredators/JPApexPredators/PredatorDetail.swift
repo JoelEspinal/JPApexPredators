@@ -39,12 +39,14 @@ struct PredatorDetail: View {
                     Map(position: $position) {
                         Annotation(predator.name,
                                    coordinate: predator.location) {
-                            Image(systemName: 
-                                    "mappin.and.ellipse")
-                            .font(.largeTitle)
-                            .imageScale(.large)
-                            .symbolEffect(.pulse)
+                                Image(systemName:
+                                        "mappin.and.ellipse")
+                                .font(.largeTitle)
+                                .imageScale(.large)
+                                .symbolEffect(.pulse)
+                            
                         }
+                                   .annotationTitles(.hidden)
                     }
                     .frame(height: 125)
                     .clipShape(.rect(cornerRadius: 15))
