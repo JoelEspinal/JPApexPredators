@@ -41,22 +41,26 @@ struct PredatorDetail: View {
                             .resizable()
                         
                     } label: {
-                    Map(position: $position) {
-                        Annotation(predator.name,
-                                   coordinate: predator.location) {
-                            Image(systemName:
-                                    "mappin.and.ellipse")
-                            .font(.largeTitle)
-                            .imageScale(.large)
-                            .symbolEffect(.pulse)
+                        Map(position: $position) {
+                            Annotation(predator.name,
+                                       coordinate: predator.location) {
+                                Image(systemName:
+                                        "mappin.and.ellipse")
+                                .font(.largeTitle)
+                                .imageScale(.large)
+                                .symbolEffect(.pulse)
+                                
+                            }
+                           .annotationTitles(.hidden)
+                        }
+                        .frame(height: 125)
+                        .clipShape(.rect(cornerRadius: 15))
+                        .overlay() {
                             
                         }
-                                   .annotationTitles(.hidden)
+                            
+                        .padding(.top)
                     }
-                    .frame(height: 125)
-                    .clipShape(.rect(cornerRadius: 15))
-                    .padding(.top)
-                }
                     Text("Appear in: ")
                         .font(.title3)
                     
