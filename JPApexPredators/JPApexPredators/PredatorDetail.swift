@@ -39,7 +39,7 @@ struct PredatorDetail: View {
                     NavigationLink {
                         Image(predator.image)
                             .resizable()
-                        
+                            .scaledToFit()
                     } label: {
                         Map(position: $position) {
                             Annotation(predator.name,
@@ -54,13 +54,23 @@ struct PredatorDetail: View {
                            .annotationTitles(.hidden)
                         }
                         .frame(height: 125)
-                        .clipShape(.rect(cornerRadius: 15))
                         .overlay(alignment: .trailing) {
                            Image(systemName: "greaterthan")
                                 .imageScale(.large)
                                 .font(.title3)
                                 .padding(.trailing, 5)
                         }
+                        .overlay(alignment: .topLeading) {
+                           Text("Current Location")
+                                .padding([.top, .bottom], 5)
+                                .padding(.trailing, 8)
+                                .background(.black.opacity(0.33))
+                                .clipShape(
+                                    .rect(bottomTrailingRadius: 15))
+                        }
+                        .clipShape(
+                            .rect(cornerRadius: 15)
+                        )
                         .padding(.top)
                     }
                     Text("Appear in: ")
