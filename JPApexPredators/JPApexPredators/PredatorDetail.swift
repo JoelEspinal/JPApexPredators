@@ -55,10 +55,12 @@ struct PredatorDetail: View {
                         }
                         .frame(height: 125)
                         .clipShape(.rect(cornerRadius: 15))
-                        .overlay() {
-                            
+                        .overlay(alignment: .trailing) {
+                           Image(systemName: "greaterthan")
+                                .imageScale(.large)
+                                .font(.title3)
+                                .padding(.trailing, 5)
                         }
-                            
                         .padding(.top)
                     }
                     Text("Appear in: ")
