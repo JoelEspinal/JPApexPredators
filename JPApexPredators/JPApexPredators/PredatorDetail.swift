@@ -39,18 +39,19 @@ struct PredatorDetail: View {
                     NavigationLink {
                         Image(predator.image)
                             .resizable()
-                            .scaledToFit()
+                        
                     } label: {
                     Map(position: $position) {
-                            Annotation(predator.name,
-                                       coordinate: predator.location) {
-                                Image(systemName:
-                                        "mappin.and.ellipse")
-                                .font(.largeTitle)
-                                .imageScale(.large)
-                                .symbolEffect(.pulse)
-                            }
-                            .annotationTitles(.hidden)
+                        Annotation(predator.name,
+                                   coordinate: predator.location) {
+                            Image(systemName:
+                                    "mappin.and.ellipse")
+                            .font(.largeTitle)
+                            .imageScale(.large)
+                            .symbolEffect(.pulse)
+                            
+                        }
+                                   .annotationTitles(.hidden)
                     }
                     .frame(height: 125)
                     .clipShape(.rect(cornerRadius: 15))
