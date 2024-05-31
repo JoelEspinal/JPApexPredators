@@ -36,14 +36,17 @@ struct PredatorDetail: View {
                 VStack(alignment: .leading) {
                     Text(predator.name)
                         .font(.largeTitle)
+                    NavigationLink {
+                        
+                    } label: {
                     Map(position: $position) {
                         Annotation(predator.name,
                                    coordinate: predator.location) {
-                                Image(systemName:
-                                        "mappin.and.ellipse")
-                                .font(.largeTitle)
-                                .imageScale(.large)
-                                .symbolEffect(.pulse)
+                            Image(systemName:
+                                    "mappin.and.ellipse")
+                            .font(.largeTitle)
+                            .imageScale(.large)
+                            .symbolEffect(.pulse)
                             
                         }
                                    .annotationTitles(.hidden)
@@ -51,7 +54,7 @@ struct PredatorDetail: View {
                     .frame(height: 125)
                     .clipShape(.rect(cornerRadius: 15))
                     .padding(.top)
-                    
+                }
                     Text("Appear in: ")
                         .font(.title3)
                     
@@ -89,6 +92,7 @@ struct PredatorDetail: View {
             }
             .ignoresSafeArea()
         }
+        .toolbarBackground(.automatic)
     }
 }
 
