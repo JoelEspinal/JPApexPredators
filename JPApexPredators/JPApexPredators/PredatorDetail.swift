@@ -37,7 +37,10 @@ struct PredatorDetail: View {
                     Text(predator.name)
                         .font(.largeTitle)
                     Map(position: $position) {
-                        
+                        Annotation(predator.name,
+                                   coordinate: predator.location) {
+                            Image(systemName: "mappin.and.ellipse")
+                        }
                     }
                     .frame(height: 125)
                     .clipShape(.rect(cornerRadius: 15))
