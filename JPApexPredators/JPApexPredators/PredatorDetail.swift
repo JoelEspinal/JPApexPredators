@@ -36,7 +36,13 @@ struct PredatorDetail: View {
                 VStack(alignment: .leading) {
                     Text(predator.name)
                         .font(.largeTitle)
-                    Map(position: <#T##Binding<MapCameraPosition>#>)
+                    Map(position: $position) {
+                        
+                    }
+                    .frame(height: 125)
+                    .clipShape(.rect(cornerRadius: 15))
+                    .padding(.top)
+                    
                     Text("Appear in: ")
                         .font(.title3)
                     
