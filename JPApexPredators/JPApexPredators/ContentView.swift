@@ -26,7 +26,12 @@ struct ContentView: View {
         NavigationStack {
             List(filteredDinos) { predator in
                 NavigationLink {
-                   PredatorDetail(predator: predator, position: .camera(MapCamera(centerCoordinate: Predators().apexPredators[2].location, distance: 30000)))
+                   PredatorDetail(predator: predator, 
+                                  position: .camera(
+                                    MapCamera(centerCoordinate: Predators().apexPredators[2].location,
+                                              distance: 30000)
+                                  )
+                   )
                 } label: {
                     HStack {
                         Image(predator.image)
