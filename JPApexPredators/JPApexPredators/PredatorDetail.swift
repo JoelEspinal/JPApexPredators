@@ -37,19 +37,20 @@ struct PredatorDetail: View {
                     Text(predator.name)
                         .font(.largeTitle)
                     NavigationLink {
-                        
+                        Image(predator.image)
+                            .resizable()
+                            .scaledToFit()
                     } label: {
                     Map(position: $position) {
-                        Annotation(predator.name,
-                                   coordinate: predator.location) {
-                            Image(systemName:
-                                    "mappin.and.ellipse")
-                            .font(.largeTitle)
-                            .imageScale(.large)
-                            .symbolEffect(.pulse)
-                            
-                        }
-                                   .annotationTitles(.hidden)
+                            Annotation(predator.name,
+                                       coordinate: predator.location) {
+                                Image(systemName:
+                                        "mappin.and.ellipse")
+                                .font(.largeTitle)
+                                .imageScale(.large)
+                                .symbolEffect(.pulse)
+                            }
+                            .annotationTitles(.hidden)
                     }
                     .frame(height: 125)
                     .clipShape(.rect(cornerRadius: 15))
@@ -97,8 +98,17 @@ struct PredatorDetail: View {
 }
 
 #Preview {
-    PredatorDetail(predator: Predators().apexPredators[2],
-                   position: .camera(MapCamera(centerCoordinate: Predators().apexPredators[2].location, distance: 30000)))
-    .preferredColorScheme(.dark)
+    NavigationStack {
+        PredatorDetail(predator: Predators()
+                    .apexPredators[2],
+                       position: .camera(
+                        MapCamera(
+                            centerCoordinate: Predators()
+                                .apexPredators[2].location,
+                            distance: 30000)
+                       )
+        )
+        .preferredColorScheme(.dark)
+    }
 }
  
