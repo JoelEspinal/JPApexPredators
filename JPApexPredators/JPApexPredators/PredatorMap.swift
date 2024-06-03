@@ -12,6 +12,7 @@ struct PredatorMap: View {
     let predators = Predators()
     
     @State var position: MapCameraPosition
+    @State var satellite = false
     
     var body: some View {
         Map(position: $position) {
@@ -27,6 +28,14 @@ struct PredatorMap: View {
                 }
             }
         }
+        .mapStyle(satellite ? .imagery(elevation: .realistic) : .standard(elevation: .realistic))
+        .overlay(alignment: .bottomTrailing) {
+            Button {
+                satellite.toggle()
+            } label: {
+                Image(systemName : satellite ? "globe.americas.fill" : "globe.americas")
+            }
+        }
     }
 }
 
@@ -36,5 +45,5 @@ struct PredatorMap: View {
                                                     heading: 250,
                                                     pitch: 80))
             )
-    .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+    .preferredColorScheme(.dark)
 }
