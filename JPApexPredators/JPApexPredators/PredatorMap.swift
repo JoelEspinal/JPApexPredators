@@ -34,14 +34,15 @@ struct PredatorMap: View {
                 satellite.toggle()
             } label: {
                 Image(systemName : satellite ? "globe.americas.fill" : "globe.americas")
+                    .font(.largeTitle)
+                    .imageScale(.large)
+                    .padding(3)
+                    .background(.ultraThinMaterial)
+                    .clipShape(.rect(cornerRadius: 7))
+                    .shadow(radius: 3)
+                    .padding()
             }
-            .font(.largeTitle)
-            .imageScale(.large)
-            .padding(3)
-            .background(.ultraThinMaterial)
-            .clipShape(.rect(cornerRadius: 7))
-            .shadow(radius: 3)
-            .padding()
+            
         }
     }
 }
