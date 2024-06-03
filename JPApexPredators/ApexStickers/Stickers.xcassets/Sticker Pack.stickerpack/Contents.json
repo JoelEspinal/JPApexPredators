@@ -8,10 +8,34 @@
   },
   "stickers" : [
     {
-      "filename" : "allosaurus.sticker"
+      "filename" : "tyrannosaurusrex.sticker"
+    },
+    {
+      "filename" : "mosasaurus.sticker"
+    },
+    {
+      "filename" : "velociraptor.sticker"
+    },
+    {
+      "filename" : "indoraptor.sticker"
+    },
+    {
+      "filename" : "indominusrex.sticker"
+    },
+    {
+      "filename" : "pteranodon.sticker"
     },
     {
       "filename" : "atrociraptor.sticker"
+    },
+    {
+      "filename" : "giganotosaurus.sticker"
+    },
+    {
+      "filename" : "pyroraptor.sticker"
+    },
+    {
+      "filename" : "allosaurus.sticker"
     },
     {
       "filename" : "baryonyx.sticker"
@@ -32,25 +56,7 @@
       "filename" : "dimorphodon.sticker"
     },
     {
-      "filename" : "giganotosaurus.sticker"
-    },
-    {
-      "filename" : "indominusrex.sticker"
-    },
-    {
-      "filename" : "indoraptor.sticker"
-    },
-    {
-      "filename" : "mosasaurus.sticker"
-    },
-    {
       "filename" : "pachycephalosaurus.sticker"
-    },
-    {
-      "filename" : "pteranodon.sticker"
-    },
-    {
-      "filename" : "pyroraptor.sticker"
     },
     {
       "filename" : "quetzalcoatlus.sticker"
@@ -63,12 +69,6 @@
     },
     {
       "filename" : "therizinosaurus.sticker"
-    },
-    {
-      "filename" : "tyrannosaurusrex.sticker"
-    },
-    {
-      "filename" : "velociraptor.sticker"
     }
   ]
 }
