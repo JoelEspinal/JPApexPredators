@@ -2,7 +2,7 @@
 //  PredatorDetail.swift
 //  JPApexPredators
 //
-//  Created by Joel Espinal (ClaroDom) on 28/5/24.
+//  Created by Joel Espinal (JoelEspinal) on 28/5/24.
 //
 
 import SwiftUI
@@ -103,6 +103,8 @@ struct PredatorDetail: View {
                     Text("Read More:")
                         .font(.caption)
                     Link(predator.link, destination: URL(string: predator.link)!)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        .padding(4)
                 }
                 .padding()
                 .padding(.bottom)
