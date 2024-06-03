@@ -42,8 +42,8 @@ struct PredatorMap: View {
                     .shadow(radius: 3)
                     .padding()
             }
-            
         }
+        .toolbarBackground(.automatic)
     }
 }
 
